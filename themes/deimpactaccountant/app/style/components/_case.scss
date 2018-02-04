@@ -1,3 +1,5 @@
+$mask-color: _palette(fg);
+
 .case {
   &[style] {
     @include transition(background-size 1s);
@@ -10,14 +12,14 @@
       @include transition(background-color .7s);
 
       position: relative;
-      background: rgba(#4F5157, 0.5);
+      background: rgba($mask-color, 0.5);
     }
 
     &:hover {
       background-size: 105%;
 
       .mask {
-        background: rgba(#4F5157, 0.7);
+        background: rgba($mask-color, 0.7);
       }
     }
   }
@@ -34,7 +36,7 @@
         font-size: 2.25rem;
       }
 
-      @include breakpoint(medium) {
+      @include breakpoint(xlarge) {
         font-size: 3.5rem;
       }
 

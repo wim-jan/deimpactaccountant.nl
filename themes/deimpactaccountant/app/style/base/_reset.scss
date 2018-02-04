@@ -51,7 +51,8 @@ table {
  * Breakpoint declaration
  */
 @include skel-breakpoints((
-	xlarge: "(min-width: 1280px)",
+	xxlarge: "(min-width: 1280px)",
+	xlarge: "(min-width: 1120px)",
 	large:  "(min-width: 980px)",
 	medium: "(min-width: 736px)",
 	small:  "(min-width: 480px)",

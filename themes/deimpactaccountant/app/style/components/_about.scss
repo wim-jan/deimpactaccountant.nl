@@ -1,0 +1,48 @@
+$svg-fill-color: _palette(fg-lighten);
+
+.about {
+  padding-top: 40px;
+
+  h2 {
+    margin: 0;
+  }
+
+  .row {
+    .icon {
+      display: block;
+      width: 75px;
+      margin: 0 50px;
+      
+      @include breakpoint(medium) {
+        float: right;
+      }
+  
+      svg {
+        fill: $svg-fill-color;
+      }
+    }
+
+    @include breakpoint(small) {
+      .content {
+        font-size: 1rem;
+      }
+    }
+
+
+    @include breakpoint(medium) {
+      &.row-reverse {
+        .icon {
+          float: left;
+        }
+
+        .content {
+          text-align: right;
+        }
+      }
+
+      .content {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

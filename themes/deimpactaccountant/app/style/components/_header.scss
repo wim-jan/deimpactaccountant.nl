@@ -16,7 +16,7 @@ header {
     position: relative;
     height: 80vh;
 
-    @include breakpoint(small) {
+    @include breakpoint(large) {
       @include header-background();
     }
 
