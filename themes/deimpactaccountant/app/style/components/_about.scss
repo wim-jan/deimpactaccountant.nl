@@ -4,44 +4,100 @@ $svg-fill-color: _palette(fg-lighten);
   padding-top: 40px;
 
   h2 {
+    text-align: center;
+  }
+
+  h3 {
     margin: 0;
   }
 
   .row {
+    display: flex;
+    margin-top: -50px;
+
+    &:first-child {
+      margin: 0;
+    }
+
+    .line {
+      svg {
+        margin: 0 auto;
+        display: block;
+        margin-top: -35px;
+        transform: scale(.5);
+
+        @include breakpoint(medium) {
+          transform: scale(1);
+        }
+
+        path {
+          stroke: $svg-fill-color;
+        }
+      }
+    }
+    
+    .pusher {
+      flex: 1;
+    }
+
     .icon {
-      display: block;
-      width: 75px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
       margin: 0 50px;
+      flex: 1;
+      max-width: 100px;
       
       @include breakpoint(medium) {
         float: right;
       }
   
       svg {
+        margin-top: 40px;
         fill: $svg-fill-color;
       }
     }
 
-    @include breakpoint(small) {
-      .content {
-        font-size: 1rem;
+    .content {
+      flex: 1;
+
+      p {
+        padding-right: 50px;
+        font-size: .8rem;
+
+        @include breakpoint(medium) {
+          font-size: 1rem;
+        }
+
+        @include breakpoint(large) {
+          font-size: 1.2rem;
+        }
       }
     }
 
 
     @include breakpoint(medium) {
       &.row-reverse {
+
+        .pusher {
+          margin-right: -10px;
+        }
+
         .icon {
-          float: left;
+          align-items: flex-start;
         }
 
         .content {
           text-align: right;
+
+          p {
+            padding: 0 0 0 50px;
+          }
         }
       }
 
       .content {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
       }
     }
   }
