@@ -1,6 +1,10 @@
 $svg-fill-color: _palette(fg-lighten);
 
 .about {
+  @include zigzag(white, transparent) {
+    z-index: 100;
+  }
+  
   padding-top: 40px;
 
   h2 {

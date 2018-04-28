@@ -12,9 +12,13 @@
 }
 
 header {
+  @include zigzag(white, transparent) {
+    z-index: 100;
+  }
+
   #head {
     position: relative;
-    height: 80vh;
+    height: 60vh;
 
     @include breakpoint(large) {
       @include header-background();

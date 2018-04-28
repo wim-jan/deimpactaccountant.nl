@@ -1,6 +1,8 @@
 $mask-color: _palette(fg);
 
 .case {
+  @include zigzag(white, transparent, 30px, true);
+
   &[style] {
     @include transition(background-size 1s);
 

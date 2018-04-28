@@ -327,3 +327,29 @@ $prev-columns) {
   -webkit-transition-delay: $delay;
   transition-delay:         $delay;
 }
+
+/**
+ * zigzag border
+ */
+ @mixin zigzag($from, $to, $size: 30px, $upsideDown: false) {
+  &:after {
+      background: linear-gradient(45deg, $to $size, $from 0), linear-gradient(-45deg, $to $size, $from 0);
+      background-position: left bottom;
+      background-repeat: repeat-x;
+      background-size: $size $size;
+      content: " ";
+      display: block;
+      position: absolute;
+      // bottom: 0;
+      left: 0px;
+      width: 100%;
+      height: $size;
+
+      @if ($upsideDown) {
+        transform: rotate(180deg);
+        margin-top: -30px;
+      }
+
+      @content
+  }
+}

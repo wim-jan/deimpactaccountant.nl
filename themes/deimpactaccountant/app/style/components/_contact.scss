@@ -1,0 +1,17 @@
+$mask-color: _palette(fg);
+
+.contact-form {
+  @include zigzag(white, transparent) {
+    z-index: 100;
+  }
+
+  background-image: url('/app/peacock.jpg');
+  background-size: cover;
+  position: relative;
+
+  .mask {
+    position: relative;
+    background: rgba($mask-color, 0.5);
+    min-height: 853px;
+  }
+}
