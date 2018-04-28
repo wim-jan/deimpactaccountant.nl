@@ -1,6 +1,6 @@
 [build]
 publish = "public"
-command = "hugo"
+command = "cd themes/deimpactaccountant && npm i && npm i -g brunch && brunch b && cd ../.. && hugo"
 
 [context.production.environment]
   HUGO_VERSION = "0.18.1"
