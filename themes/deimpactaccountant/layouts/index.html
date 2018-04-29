@@ -1,6 +1,8 @@
 {{ partial "header.html" . }}
 
-{{ partial "case.html" . }}
+{{ with .Site.GetPage "section" "case" }}
+  {{ partial "case.html" . }}
+{{ end }}
 
 {{ partial "about.html" . }}
 

@@ -4,69 +4,30 @@
     <h2>Wil je weten hoe ik werk?</h2>
   </div>
 
-  <div class="row row-reverse">
-    <div class="pusher"></div>
-    <div class="icon">
-      {{ partial "svg/map.svg" }}
-    </div>
-    <div class="content">
-      <div class="inner">
-        <h3>Impact in kaart brengen</h3>
-        <p>
-            Ben jij op zoek naar hoe jouw bedrijf meer impact kan hebben? Wil jij socialer of duurzamer ondernemen? Breng dan jouw impactgebieden in kaart en ontdek een passende focus om mee aan de slag te aan. 
-        </p>
+  {{ $items := (where .Data.Pages "Section" "about") }}
+  {{ $length := (len $items) }}
+
+  {{ range $i,$p := where .Data.Pages "Section" "about" }}
+
+    <div class="row {{ if (modBool $i 2) }}row-reverse{{ end }}">
+      <div class="pusher"></div>
+      <div class="icon">
+        {{ partial .Params.icon }}
+      </div>
+      <div class="content">
+        <div class="inner">
+          <h3>{{ .Title }}</h3>
+          <p>
+              {{ .Content }}
+          </p>
+        </div>
       </div>
     </div>
-  </div>
 
-  {{ partial "about-line.html" }}
+    {{ if ne (add $i 1) $length }}
+      {{ partial "about-line.html" }}
+    {{ end }}
 
-  <div class="row">
-    <div class="pusher"></div>
-    <div class="icon">
-      {{ partial "svg/teamwork.svg" }}
-    </div>
-    <div class="content">
-      <div class="inner">
-        <h3>Samen reflecteren</h3>
-        <p>
-            Maak even pas op de plaats en reflecteer op wat jullie doen. Liggen jullie activiteiten in lijn met wat jullie willen bereiken? Ik loop met jullie op, denk mee en stel vragen. Jullie zijn zelf het beste in staat de antwoorden te genereren, ik help ze ontdekken en zorg dat de kern boven tafel komt. 
-        </p>
-      </div>
-    </div>
-  </div>
+  {{ end }}
 
-  {{ partial "about-line.html" }}
-
-  <div class="row row-reverse">
-    <div class="pusher"></div>
-    <div class="icon">
-      {{ partial "svg/idea.svg" }}
-    </div>
-    <div class="content"> 
-      <div class="inner">
-        <h3>Tellen en vertellen</h3>
-        <p>
-            Wil jij weten wat daadwerkelijk jullie maatschappelijke meerwaarde is? Ga aan de slag met een impactmeting. Neem contact met me op, dan onderzoeken we samen welk meetinstrument bij jouw vraag en organisatie past.  
-        </p>
-      </div>
-    </div>
-  </div>
-
-  {{ partial "about-line.html" }}
-
-  <div class="row">
-    <div class="pusher"></div>
-    <div class="icon">
-      {{ partial "svg/growth.svg" }}
-    </div>
-    <div class="content">
-      <div class="inner">
-        <h3>Focus op Impact</h3>
-        <p>
-            Krijg focus en ontdek hoe jullie de impact van de organisatie kunnen vergroten. Samen krijgen we een helder en eerlijk verhaal boven tafel om te delen met je stakeholders.
-        </p>
-      </div>
-    </div>
-  </div>
 </section>
