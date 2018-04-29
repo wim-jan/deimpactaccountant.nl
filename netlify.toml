@@ -1,6 +1,6 @@
 [build]
 publish = "public"
-command = "SITEPATH=$(\"echo pwd\") && cd themes/deimpactaccountant && npm i && npm i -g brunch && brunch b && cd $SITEPATH && hugo"
+command = "SITEPATH=$(pwd) && cd themes/deimpactaccountant && npm i && npm i -g brunch && brunch b && cd $SITEPATH && hugo"
 
 [context.production.environment]
   HUGO_VERSION = "0.40.1"
