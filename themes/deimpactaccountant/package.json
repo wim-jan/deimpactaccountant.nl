@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prod": "NODE_ENV=production brunch build --production",
-    "start": "brunch watch"
+    "start": "concurrently \"(cd ../.. ; hugo server -D)\" \"brunch watch\""
   },
   "author": "",
   "license": "ISC",
@@ -25,5 +25,8 @@
     "skel-framework-npm": "^1.0.1",
     "the-flex-grid": "^1.5.1",
     "uglify-js-brunch": "^2.10.0"
+  },
+  "dependencies": {
+    "concurrently": "^3.5.1"
   }
 }

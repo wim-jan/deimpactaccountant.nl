@@ -1,0 +1,101 @@
+$mask-color: _palette(fg);
+
+.contact-form {
+  @include zigzag(white, transparent) {
+    z-index: 100;
+  }
+
+  background-image: url('/app/peacock.jpg');
+  background-size: cover;
+  position: relative;
+
+  .mask {
+    position: relative;
+    background: rgba($mask-color, 0.5);
+    padding-bottom: 100px;
+  }
+
+  .inner {
+    padding-top: 120px;
+
+    span.light {
+      color: _palette(fg-white);
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      font-size: 1.5rem;
+
+      @include breakpoint(small) {
+        font-size: 2.25rem;
+      }
+
+      @include breakpoint(xlarge) {
+        font-size: 3.5rem;
+      }
+    }
+
+    .info-box {
+      background-color: _palette(magenta);
+      padding: 30px 30px 70px;
+
+      &>div {
+
+        &:nth-of-type(1) {
+          border-right: 1px _palette(fg-white) dashed;
+          padding-right: 60px;
+        } 
+      }
+    }
+
+    form {
+      padding: 30px;
+
+      .form-element {
+        position: relative;
+        margin-bottom: 60px;
+      }
+      
+      input, textarea {
+        display: block;
+        background: transparent;
+        border: 0;
+        width: 100%;
+        color: _palette(fg-white);
+        border-bottom: 2px solid desaturate(lighten(_palette(magenta), 15), 3);
+        // line-height: 1;
+
+        & + span {
+          // @include transition(width .3s);
+
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          pointer-events: none;
+
+          &:before {
+            @include transition(all .4s);
+
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            transition: all 0.4s;
+            background: #fff;
+          }
+        }
+
+        &:focus + span {
+          &:before {
+            width: calc(100% + 2px);
+          }
+        }
+      }
+    }
+  }
+}
