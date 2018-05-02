@@ -1,0 +1,85 @@
+form {
+
+  /**
+   * Base styling
+   */
+  padding: 30px;
+
+  .form-element {
+    position: relative;
+    margin-bottom: 60px;
+  }
+  
+  /**
+   * Element styling
+   */
+  input, textarea {
+    display: block;
+    background: transparent;
+    border: 0;
+    width: 100%;
+    color: _palette(fg-white);
+    border-bottom: 2px solid desaturate(lighten(_palette(magenta), 15), 3);
+  }
+
+  button {
+    border: 0;
+    padding: 6px 12px;
+    background-color: _palette(fg-white);
+    color: _palette(fg);
+
+    &.magenta {
+      background-color: _palette(magenta);
+      color: _palette(fg-white);
+    }
+  }
+
+  /**
+   * Interaction design
+   */
+  input, textarea {
+    & + span {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+
+      &:before {
+        @include transition(all .4s);
+
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        transition: all 0.4s;
+        background: #fff;
+      }
+    }
+
+    &:focus + span {
+      &:before {
+        width: calc(100% + 2px);
+      }
+    }
+  }
+
+  button {
+    @include transition(all .4s);
+    
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(_palette(fg-white), .7);
+
+      &.magenta {
+        background-color: desaturate(lighten(_palette(magenta), 15), 3);
+      }
+    }
+  }
+}

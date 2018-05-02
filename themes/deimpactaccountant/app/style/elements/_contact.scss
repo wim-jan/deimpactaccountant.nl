@@ -41,60 +41,14 @@ $mask-color: _palette(fg);
       &>div {
 
         &:nth-of-type(1) {
-          border-right: 1px _palette(fg-white) dashed;
-          padding-right: 60px;
+          border-right: 0;
+          padding-right: 30px;
+
+          @include breakpoint(large) {
+            border-right: 1px _palette(fg-white) dashed;
+            padding-right: 60px;
+          }
         } 
-      }
-    }
-
-    form {
-      padding: 30px;
-
-      .form-element {
-        position: relative;
-        margin-bottom: 60px;
-      }
-      
-      input, textarea {
-        display: block;
-        background: transparent;
-        border: 0;
-        width: 100%;
-        color: _palette(fg-white);
-        border-bottom: 2px solid desaturate(lighten(_palette(magenta), 15), 3);
-        // line-height: 1;
-
-        & + span {
-          // @include transition(width .3s);
-
-          display: block;
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
-          pointer-events: none;
-
-          &:before {
-            @include transition(all .4s);
-
-            content: "";
-            display: block;
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            transition: all 0.4s;
-            background: #fff;
-          }
-        }
-
-        &:focus + span {
-          &:before {
-            width: calc(100% + 2px);
-          }
-        }
       }
     }
   }
