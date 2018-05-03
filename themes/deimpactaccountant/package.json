@@ -21,6 +21,7 @@
     "font-awesome": "^4.7.0",
     "javascript-brunch": "^2.10.0",
     "path": "^0.12.7",
+    "postcss-brunch": "^0.6.0",
     "sass-brunch": "^2.10.4",
     "skel-framework-npm": "^1.0.1",
     "the-flex-grid": "^1.5.1",

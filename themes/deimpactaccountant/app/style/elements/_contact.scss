@@ -48,7 +48,43 @@ $mask-color: _palette(fg);
             border-right: 1px _palette(fg-white) dashed;
             padding-right: 60px;
           }
-        } 
+        }
+        
+        &:nth-of-type(2) {
+          padding: 30px 60px;
+
+          ul {
+            li {
+              margin-bottom: 60px;
+            }
+          }
+
+          a {
+            color: _palette(fg-white);
+
+            &:hover {
+              color: desaturate(lighten(_palette(magenta), 15), 3);
+            }
+          }
+
+          i {
+            position: relative;
+            left: -15px;
+            color: _palette(fg-white);
+
+            @include breakpoint(large) {
+              font-size: 1.5rem;
+            }
+
+            @include breakpoint(medium) {
+              font-size: 1rem;
+            }
+
+            @include breakpoint(xsmall) {
+              font-size: .75rem;
+            }
+          }
+        }
       }
     }
   }

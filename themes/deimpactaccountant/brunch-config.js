@@ -51,9 +51,6 @@ var brunchConfig = {
 
   // auto require app.js module to start it
   modules: {
-    autoRequire: {
-      'app.js': ['js/app']
-    }
   },
 
   // App paths configuration
@@ -73,7 +70,8 @@ var brunchConfig = {
       options: {
         includePaths: [
           'node_modules/the-flex-grid/dist/',
-          'node_modules/skel-framework-npm/dist/skel'
+          'node_modules/skel-framework-npm/dist/skel',
+          'node_modules/font-awesome'
         ]
       }
     },
@@ -107,7 +105,7 @@ var brunchConfig = {
       },
       // assets won't be copied more frequent than once per X seconds.
       minTimeSpanSeconds: 10
-    }
+    },
   }
 };
 
