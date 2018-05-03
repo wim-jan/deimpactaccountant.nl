@@ -7,9 +7,9 @@
   {{ $items := (where .Data.Pages "Section" "about") }}
   {{ $length := (len $items) }}
 
-  {{ range $i,$p := where .Data.Pages "Section" "about" }}
+  {{ range sort (where .Data.Pages "Section" "about") .Params.weight }}
 
-    <div class="row {{ if (modBool $i 2) }}row-reverse{{ end }}">
+    <div class="row {{ if not (modBool .Params.weight 2) }}row-reverse{{ end }}">
       <div class="pusher"></div>
       <div class="icon">
         {{ partial .Params.icon }}
@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    {{ if ne (add $i 1) $length }}
+    {{ if ne .Params.weight $length }}
       {{ partial "about-line.html" }}
     {{ end }}
 
