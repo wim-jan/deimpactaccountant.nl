@@ -1,5 +1,5 @@
 ---
-title: Impact in kaart brengen
+title: Impact in kaart gebracht
 icon: svg/map.svg
 weight: 1
 ---
