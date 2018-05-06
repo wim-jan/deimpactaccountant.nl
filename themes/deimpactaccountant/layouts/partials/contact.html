@@ -5,27 +5,38 @@
           <div class="col-10 inner">
             <div class="row info-box">
 
-              <span class="light">Wil je meer weten? Ik help je graag!</span>
+              <span class="light">{{ .Params.heading }}</span>
 
-              <div class="col-large-7 col-small-12">
-                <form method="POST">
-                  <div class="form-element">
-                    <input type="text" name="name" placeholder="Hoe heet je?" required /><span></span>
+              <div class="col-large-7 col-small-12 slide-container">
+
+                <div id="slide">
+
+                  <div id="success">
+                    <img src="https://media3.giphy.com/media/26ufhqlbeuJsUbvDG/giphy.gif" alt="Thanks!" />
+                    <span>Bedankt! Ik laat zo snel mogelijk iets van me horen.</span>
                   </div>
-                  <div class="form-element">
-                    <input type="email" name="email" placeholder="Op welk e-mailadres kan ik je bereiken?" required /><span></span>
-                  </div>
-                  <div class="form-element">
-                    <textarea name="message" placeholder="Waarmee kan ik je helpen?"></textarea><span></span>
-                  </div>
-                  <button type="submit">Verstuur!</button>
-                </form>
+
+                  <form method="POST" id="contactform" action="https://formcarry.com/s/ryPHDtKTf">
+                    <div class="form-element">
+                      <input type="text" name="name" placeholder="{{ .Params.contactform.name }}" required /><span></span>
+                    </div>
+                    <div class="form-element">
+                      <input type="email" name="email" placeholder="{{ .Params.contactform.email }}" required /><span></span>
+                    </div>
+                    <div class="form-element">
+                      <textarea name="message" placeholder="{{ .Params.contactform.message }}"></textarea><span></span>
+                    </div>
+                    <input type="hidden" name="_gotcha">
+                    <button type="submit">{{ .Params.contactform.button }}</button>
+                  </form>
+                </div>
+
               </div>
               
               <div class="col-large-5 col-small-12">
                 <ul>
-                  <li><i class="fa fa-phone"></i><a href="call:+31612345678">+316 123 456 78</a></li>
-                  <li><i class="fa fa-envelope"></i><a href="mailto:karen@deimpactaccountant.nl">karen@deimpactaccountant.nl</a></li>
+                  <li><i class="fa fa-phone"></i><a href="call:{{ replace .Params.details.phone " " "" }}">{{ .Params.details.phone }}</a></li>
+                  <li><i class="fa fa-envelope"></i><a href="mailto:{{ .Params.details.email }}">{{ .Params.details.email }}</a></li>
                 </ul>
               </div>
             </div>

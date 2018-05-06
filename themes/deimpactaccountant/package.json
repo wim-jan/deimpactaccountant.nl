@@ -28,6 +28,8 @@
     "uglify-js-brunch": "^2.10.0"
   },
   "dependencies": {
-    "concurrently": "^3.5.1"
+    "axios": "^0.18.0",
+    "concurrently": "^3.5.1",
+    "npm": "^6.0.0"
   }
 }

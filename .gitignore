@@ -2,3 +2,4 @@ data/*
 themes/**/node_modules
 themes/**/static
 public
+static

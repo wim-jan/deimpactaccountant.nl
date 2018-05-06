@@ -6,6 +6,8 @@
 
 {{ partial "about.html" . }}
 
-{{ partial "contact.html" . }}
+{{ with .Site.GetPage "section" "contact" }}
+  {{ partial "contact.html" . }}
+{{ end }}
 
 {{ partial "footer.html" . }}

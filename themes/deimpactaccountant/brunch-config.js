@@ -1,7 +1,7 @@
 const del = require('del');
 const path = require('path');
 
-const publicDir = path.join('static', 'app');
+const publicDir = path.join('..', '..', 'static');
 
 // set environment variable NODE_ENV to 'PRODUCTION' to run in production mode
 const production = process.env.NODE_ENV === 'PRODUCTION';
@@ -38,7 +38,7 @@ var brunchConfig = {
       - map of ('outputFilePath': function that takes input path)
       */
       joinTo: {
-        'vendor.js': /^vendor/,
+        'vendor.js': /^node_modules/,
         'app.js': /^app/
       }
     },
