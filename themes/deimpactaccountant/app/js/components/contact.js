@@ -23,19 +23,19 @@ module.exports = class Contact {
 
     this.success()
 
-    // axios
-    //   .request({
-    //     method: 'POST',
-    //     headers: {
-    //       'content-type': `multipart/form-data; boundary=${data._boundary}`,
-    //       'accept': 'application/json'
-    //     },
-    //     data: data,
-    //     url: 'https://formcarry.com/s/ryPHDtKTf'
-    //   })
-    //   .then((response) => {
-    //     if (response.status === 200) this.success()
-    //   })
+    axios
+      .request({
+        method: 'POST',
+        headers: {
+          'content-type': `multipart/form-data; boundary=${data._boundary}`,
+          'accept': 'application/json'
+        },
+        data: data,
+        url: 'https://formcarry.com/s/ryPHDtKTf'
+      })
+      .then((response) => {
+        if (response.status === 200) this.success()
+      })
 
     return false
   }
