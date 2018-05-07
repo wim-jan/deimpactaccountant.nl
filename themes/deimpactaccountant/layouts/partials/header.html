@@ -29,15 +29,11 @@
   <body>
     <header>
       <section id="head" class="grid">
-        <div class="row row-center">
-          <div class="col-10 col-bottom">
-            <div class="content">
-              <img src="/app/logo.png" id="logo" title="De Impactaccountant - Maakt impact zichtbaar" />
-            </div>
-          </div>
+        <div class="logo"><img src="/app/logo.png" id="logo" title="De Impactaccountant - Maakt impact zichtbaar" /></div>
+        <div class="row row-center row-middle">
           <div class="col-10">
             <div class="content">
-              <span>Hoi, ik ben Karen: organisatiefilosoof en impactaccountant.</span>
+              <span>{{ .Content }}</span>
             </div>
           </div>
         </div>

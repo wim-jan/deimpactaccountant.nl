@@ -1,0 +1,39 @@
+footer {
+  @include zigzag(_palette(fg), transparent, 30px, true) {
+    z-index: 100;
+    top: 0;
+  }
+
+  position: relative;
+  background-color: _palette(fg);
+  color: _palette(fg-white);
+  padding: 30px 0;
+  
+  @include breakpoint(large) {
+    font-size: 1.5rem;
+  }
+
+  @include breakpoint(medium) {
+    font-size: 1rem;
+  }
+
+  @include breakpoint(xsmall) {
+    font-size: .75rem;
+  }
+
+  a {
+    border-bottom: none;
+  }
+
+  li {
+    // margin-bottom: 15px;
+  }
+
+  ul ul {
+    display: inline-flex;
+    
+    li {
+      margin-right: 15px;
+    }
+  }
+}

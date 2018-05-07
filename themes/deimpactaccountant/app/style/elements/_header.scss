@@ -24,20 +24,38 @@ header {
       @include header-background();
     }
 
-    .row {
-      height: 100%;
-    }
-    
-    .content {
-      #logo {
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+
+      img {
+
         @include breakpoint(xsmall) {
           width: 100%;
         }
 
         @include breakpoint(small) {
+          width: 300px;
+          margin: 15px 15px 0;
+        }
+
+        @include breakpoint(large) {
+          width: 400px;
+        }
+
+        @include breakpoint(xlarge) {
           width: 500px;
         }
       }
+    }
+
+    .row {
+      height: 100%;
+    }
+    
+    .content {
+      
 
       span {
         font-size: 1.5rem;

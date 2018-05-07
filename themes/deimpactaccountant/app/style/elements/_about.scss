@@ -16,9 +16,12 @@ $svg-fill-color: _palette(fg-lighten);
   }
 
   .row {
-    display: flex;
-    margin-top: -50px;
-    max-height: 220px;
+
+    @include breakpoint(small) {
+      display: flex;
+      margin-top: -50px;
+      max-height: 220px;
+    }
 
     &:first-child {
       margin: 0;
@@ -29,40 +32,63 @@ $svg-fill-color: _palette(fg-lighten);
     }
 
     .line {
-      svg {
-        margin: 0 auto;
-        display: block;
-        margin-top: -35px;
-        transform: scale(.5);
+      @include breakpoint(small) {
+        svg {
+          margin: 0 auto;
+          display: block;
+          margin-top: -35px;
+          transform: scale(.5);
 
-        @include breakpoint(medium) {
-          transform: scale(1);
-        }
+          @include breakpoint(medium) {
+            transform: scale(1);
+          }
 
-        path {
-          stroke: $svg-fill-color;
+          path {
+            stroke: $svg-fill-color;
+          }
         }
+      }
+
+      @include breakpoint(xsmall) {
+        display: none;
       }
     }
     
     .pusher {
       flex: 1;
+
+      @include breakpoint(xsmall) {
+        display: none;
+      }
     }
 
     .icon {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      margin: 0 50px;
-      flex: 1;
-      max-width: 100px;
+      @include breakpoint(small) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin: 0 50px;
+        flex: 1;
+        max-width: 100px;
+
+        svg {
+          margin-top: 40px;
+        }
+      }
       
       @include breakpoint(medium) {
         float: right;
       }
+
+      @include breakpoint(xsmall) {
+        text-align: center;
+
+        svg {
+          width: 15%;
+        }
+      }
   
       svg {
-        margin-top: 40px;
         fill: $svg-fill-color;
       }
     }
@@ -72,11 +98,15 @@ $svg-fill-color: _palette(fg-lighten);
 
       .inner {
         max-width: 400px;
+
+        @include breakpoint(xsmall) {
+          padding: 0 30px;
+        }
       }
 
       p {
         padding-right: 50px;
-        font-size: .8rem;
+        font-size: 1rem;
 
         @include breakpoint(medium) {
           font-size: 1rem;
@@ -84,6 +114,12 @@ $svg-fill-color: _palette(fg-lighten);
 
         @include breakpoint(large) {
           font-size: 1.2rem;
+        }
+
+        @include breakpoint(xsmall) {
+          text-align: left;
+          padding: 0 0 30px 0;
+          border-bottom: dotted _palette(fg-lighten);
         }
       }
     }

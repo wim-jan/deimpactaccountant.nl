@@ -6,7 +6,14 @@ $mask-color: _palette(fg);
   &[style] {
     @include transition(background-size 1s);
 
-    background-size: 100%;
+    @include breakpoint(xsmall) {
+      background-size: cover;
+    }
+
+    @include breakpoint(small) {
+      background-size: 100%;
+    }
+
     background-position: center center;
     position: relative;
 
@@ -18,7 +25,10 @@ $mask-color: _palette(fg);
     }
 
     &:hover {
-      background-size: 105%;
+
+      @include breakpoint(small) {
+        background-size: 105%;
+      }
 
       .mask {
         background: rgba($mask-color, 0.7);
