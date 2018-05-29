@@ -1,5 +1,5 @@
 ---
-title: Brans Oesterzwammenkwekerij
+title: Brans Oesterzwamkwekerij
 external_url: https://www.oesterzwamkwekerij.nl/
 background: /case/DSjByvoX0AAUxU6.jpg
 ---

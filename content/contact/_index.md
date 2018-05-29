@@ -7,6 +7,6 @@ contactform:
   button: Verstuur!
   success: Bedankt! Ik laat zo snel mogelijk iets van me horen.
 details:
-  phone: +316 123 456 78
+  phone: +316 57 94 15 83
   email: karen@deimpactaccountant.nl
 ---
