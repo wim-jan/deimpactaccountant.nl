@@ -1,5 +1,5 @@
 ---
-title: Focus op Impact
+title: Focus op impact
 icon: svg/growth.svg
 weight: 4
 ---
