@@ -29,6 +29,10 @@ $svg-fill-color: _palette(fg-lighten);
 
     &:last-child {
       margin-bottom: 30px;
+      
+      p {
+        border-bottom: none !important;
+      }
     }
 
     .line {

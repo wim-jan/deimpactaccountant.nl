@@ -6,16 +6,13 @@ $mask-color: _palette(fg);
   &[style] {
     @include transition(background-size 1s);
 
-    @include breakpoint(xsmall) {
-      background-size: cover;
-    }
-
-    @include breakpoint(small) {
+    @include breakpoint(large) {
       background-size: 100%;
     }
 
     background-position: center center;
     position: relative;
+    background-size: cover;
 
     .mask {
       @include transition(background-color .7s);
@@ -26,7 +23,7 @@ $mask-color: _palette(fg);
 
     &:hover {
 
-      @include breakpoint(small) {
+      @include breakpoint(large) {
         background-size: 105%;
       }
 
@@ -42,14 +39,14 @@ $mask-color: _palette(fg);
     p {
       margin-bottom: 1rem;
       color: _palette(fg-white);
-      font-size: 1.5rem;
+      font-size: 1.3rem;
 
       @include breakpoint(small) {
         font-size: 2.25rem;
       }
 
-      @include breakpoint(xlarge) {
-        font-size: 3.5rem;
+      @include breakpoint(large) {
+        font-size: 2.8rem;
       }
 
       &:last-child {
