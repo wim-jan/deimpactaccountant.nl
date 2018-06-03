@@ -1,7 +1,7 @@
 const del = require('del');
 const path = require('path');
 
-const publicDir = path.join('..', '..', 'static');
+const publicDir = path.join('static');
 
 // set environment variable NODE_ENV to 'PRODUCTION' to run in production mode
 const production = process.env.NODE_ENV === 'PRODUCTION';

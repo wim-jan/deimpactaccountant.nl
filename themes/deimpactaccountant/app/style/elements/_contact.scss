@@ -4,8 +4,7 @@ $mask-color: _palette(fg);
   @include zigzag(white, transparent) {
     z-index: 100;
   }
-
-  background-image: url('/app/peacock.jpg');
+  
   background-size: cover;
   position: relative;
 
