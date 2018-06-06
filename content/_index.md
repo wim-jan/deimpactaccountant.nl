@@ -10,4 +10,4 @@ footer:
   - title: Voeg me toe op LinkedIn
     url: https://www.linkedin.com/in/karenandre/
 ---
-Hoi, ik ben Karen, organisatiefilosoof en impactaccountant. Ik help organisaties hun impact zichtbaar te maken en te vergroten.
+Hoi, ik ben <a href="https://www.linkedin.com/in/karenandre/" target="_blank">Karen</a>, organisatiefilosoof en impactaccountant. Ik help organisaties hun impact zichtbaar te maken en te vergroten.

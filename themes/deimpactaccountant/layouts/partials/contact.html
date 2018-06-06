@@ -1,4 +1,4 @@
-<section class="grid contact-form" style="background-image: url('{{ .Params.background }}')">
+<section class="grid contact-form" style="background-image: url('{{ .Params.background }}')" id="contact">
 
   <div class="mask">
       <div class="row row-middle row-center">
@@ -39,7 +39,7 @@
               
               <div class="col-large-5 col-small-12">
                 <ul>
-                  <li><i class="fa fa-phone"></i><a href="call:{{ replace .Params.details.phone " " "" }}">{{ .Params.details.phone }}</a></li>
+                  <li><i class="fa fa-phone"></i><a href="tel:{{ replace .Params.details.phone " " "" }}">{{ .Params.details.phone }}</a></li>
                   <li><i class="fa fa-envelope"></i><a href="mailto:{{ .Params.details.email }}">{{ .Params.details.email }}</a></li>
                 </ul>
               </div>
